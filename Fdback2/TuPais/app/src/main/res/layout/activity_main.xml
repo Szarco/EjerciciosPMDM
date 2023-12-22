@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/Paises"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/Espana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Espana" />
+
+        <RadioButton
+            android:id="@+id/Portugal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Portugal" />
+
+        <RadioButton
+            android:id="@+id/Francia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Francia" />
+
+        <RadioButton
+            android:id="@+id/Italia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Italia" />
+
+        <RadioButton
+            android:id="@+id/Holanda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Holanda" />
+
+        <RadioButton
+            android:id="@+id/Suiza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suiza" />
+
+        <RadioButton
+            android:id="@+id/Austria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Austria" />
+
+        <RadioButton
+            android:id="@+id/Belgica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belgica" />
+
+        <RadioButton
+            android:id="@+id/Polonia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Polonia" />
+
+        <RadioButton
+            android:id="@+id/Alemania"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alemania" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/Bandera"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Paises"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
