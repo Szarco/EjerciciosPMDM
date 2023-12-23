@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     var grabacion: MediaRecorder? =null
     var ruta:String?=null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,9 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.botonIniciar.setOnClickListener{
             if(grabacion==null) {
-
+                grabacion = MediaRecorder()
                 ruta = "/data/data/com.example.grabacionaudio/archivo.mp3"
-
                 grabacion?.setAudioSource(MediaRecorder.AudioSource.MIC)
                 grabacion?.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
                 grabacion?.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
@@ -58,15 +56,17 @@ class MainActivity : AppCompatActivity() {
             }
                 Snackbar.make(binding.root, "Grabación parada", Snackbar.LENGTH_LONG).show()
         }
-        binding.botonRepro.setOnClickListener{
-            var mediaPlayer= MediaPlayer()
-            try {
-                mediaPlayer.setDataSource(ruta)
-                mediaPlayer.prepare()
-            }catch (e:IOException){
+        binding.botonRepro.setOnClickListener {
+            if (ruta != null) {
+                var mediaPlayer = MediaPlayer()
+                try {
+                    mediaPlayer.setDataSource(ruta)
+                    mediaPlayer.prepare()
+                } catch (e: IOException) {
+                }
+                mediaPlayer.start()
+                Snackbar.make(binding.root, "Reproduciendo grabación", Snackbar.LENGTH_LONG).show()
+                }
             }
-            mediaPlayer.start()
-            Snackbar.make(binding.root, "Reproduciendo grabación", Snackbar.LENGTH_LONG).show()
         }
-    }
 }
